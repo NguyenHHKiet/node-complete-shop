@@ -12,9 +12,9 @@ const flash = require("connect-flash");
 const csrf = require("csurf");
 // const upload = require("./middleware/upload");
 // const multer = require("multer");
-const helmet = require("helmet");
-const compression = require("compression");
-const morgan = require("morgan");
+// const helmet = require("helmet");
+// const compression = require("compression");
+// const morgan = require("morgan");
 
 // const storage = multer.diskStorage({
 //     destination: function (req, file, cb) {
@@ -33,10 +33,10 @@ const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
-const accessLogStream = fs.createWriteStream(
-    path.join(__dirname, "access.log"),
-    { flags: "a" }
-);
+// const accessLogStream = fs.createWriteStream(
+//     path.join(__dirname, "access.log"),
+//     { flags: "a" }
+// );
 
 const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.yq5iral.mongodb.net/${process.env.MONGO_DEFAULT_DATABASE}`;
 
@@ -59,9 +59,9 @@ Express-session sử dụng cookie để lưu trữ id phiên.
 // create express app
 const app = express();
 
-app.use(helmet());
-app.use(compression());
-app.use(morgan("combined", { stream: accessLogStream }));
+// app.use(helmet());
+// app.use(compression());
+// app.use(morgan("combined", { stream: accessLogStream }));
 
 // parse requests of content-type - application/json
 app.use(bodyParser.json());
