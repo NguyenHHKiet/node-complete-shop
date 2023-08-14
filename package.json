@@ -1,0 +1,42 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT",
+    "engines": {
+        "node": "18.16.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "MONGO_USER=nhoangkiet35 MONGO_PASSWORD=2mif8aQalNaAfz0K MONGO_DEFAULT_DATABASE=shop node app.js",
+        "start-server": "node app.js",
+        "start:dev": "nodemon app.js"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
+    },
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.20.2",
+        "compression": "^1.7.4",
+        "connect-flash": "^0.1.1",
+        "connect-mongodb-session": "^3.1.1",
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "csurf": "^1.11.0",
+        "express": "^4.18.2",
+        "express-session": "^1.17.3",
+        "express-validator": "^7.0.1",
+        "helmet": "^7.0.0",
+        "mongodb": "^5.7.0",
+        "mongoose": "^7.4.1",
+        "morgan": "^1.10.0",
+        "multer": "^1.4.5-lts.1",
+        "mysql2": "^3.5.2",
+        "nodemailer": "^6.9.4",
+        "nodemailer-sendgrid-transport": "^0.2.0",
+        "pdfkit": "^0.13.0",
+        "sequelize": "^6.32.1",
+        "uuid": "^9.0.0"
+    }
+}
