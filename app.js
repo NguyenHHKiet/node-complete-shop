@@ -11,20 +11,20 @@ const MongoDBStore = require("connect-mongodb-session")(session);
 const flash = require("connect-flash");
 const csrf = require("csurf");
 // const upload = require("./middleware/upload");
-const multer = require("multer");
+// const multer = require("multer");
 const helmet = require("helmet");
 const compression = require("compression");
 const morgan = require("morgan");
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, "./uploads"); // uploads is the folder name
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname); // use the original file name
-    },
-});
-const upload = multer({ storage: storage }).single("file"); // file is the field name
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, "./uploads"); // uploads is the folder name
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, file.originalname); // use the original file name
+//     },
+// });
+// const upload = multer({ storage: storage }).single("file"); // file is the field name
 // const upload = multer({ dest: "uploads/" }); // specify the destination folder for uploaded files
 
 const User = require("./models/userModel");
@@ -160,13 +160,13 @@ app.use("/getCSRFToken", csrfProtection, function (req, res) {
 //     });
 // });
 
-app.post("/upload", upload.single("file"), (req, res) => {
-    // req.file contains the file information
-    // req.body contains the other variables
-    console.log(req.files);
-    console.log(req.body);
-    res.send("File uploaded successfully");
-});
+// app.post("/upload", upload.single("file"), (req, res) => {
+//     // req.file contains the file information
+//     // req.body contains the other variables
+//     console.log(req.files);
+//     console.log(req.body);
+//     res.send("File uploaded successfully");
+// });
 
 app.use((error, req, res, next) => {
     console.log(error);
